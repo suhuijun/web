@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {BrowserRouter as Router,Link,Route} from 'react-router-dom';
+import {Link,Route} from 'react-router-dom';
 import Good from './Good';
 import All from './All';
 import Share from './Share';
@@ -26,15 +26,15 @@ export default class Home extends Component {
                     <Link to={url+'/job'} style={style1}>招聘</Link>
                 </div>
                 <div>
-                    <Router>
+                    
                     <div style={style2}>
-                        <Route path={`${url}/all/`} component={All} />
-                        <Route path={`${url}/good/`} component={Good} />
-                        <Route path={`${url}/share/`} component={Share} />
-                        <Route path={`${url}/ask/`} component={Ask} />
-                        <Route path={`${url}/job/`} component={Job} />
+                        <Route exact path={url+'/all/'}  component={All} />
+                        <Route exact path={url+'/good'} component={Good} />
+                        <Route exact path={url+'/share'} component={Share} />
+                        <Route exact path={url+'/ask'} component={Ask} />
+                        <Route exact path={url+'/job'} component={Job} />
                     </div>
-                    </Router>
+                   
                 </div>
             </div>
         )
